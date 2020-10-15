@@ -15,7 +15,7 @@ class Cronometro extends React.Component {
       centesimo: 0,
       stop: false,
       nameStop: "Stop",
-      name: "Relógio", 
+      name: "Cronômetro", 
       parcial: ""
     };
   }
