@@ -98,6 +98,7 @@ class Cronometro extends React.Component {
       segundos: 0,  
       minutos: 0,  
       centesimo:0,
+      parcial: "",
     })
   }
 
