@@ -94,6 +94,7 @@ class Cronometro extends React.Component {
   
   zerar () {
     this.setState({ 
+      horas:0,
       segundos: 0,  
       minutos: 0,  
       centesimo:0,
@@ -113,7 +114,7 @@ class Cronometro extends React.Component {
         <div className = "relogio">
           <Contador horas={this.state.horas} minutos={this.state.minutos} segundos={this.state.segundos} centesimo={this.state.centesimo} />
           <LabelRelogio name={this.state.name} />
-          <Botao onClick={() => this.zerarCronometro()} label={"Zerar"} />
+          <Botao onClick={() => this.zerar()} label={"Zerar"} />
           <Botao onClick={() => this.pararTempo()} label={this.state.nameStop} />
           <Botao onClick={() => this.parcial()} label={"Pacial"} />
           <LabelRelogio name={this.state.parcial} />
