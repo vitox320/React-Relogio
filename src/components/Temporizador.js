@@ -4,6 +4,7 @@ import Contador from './Contador'
 import Botao from './Botao'
 import LabelRelogio from './LabelRelogio'
 import './App.css';
+import './clock.css';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class Temporizador extends React.Component {
@@ -115,18 +116,19 @@ class Temporizador extends React.Component {
          <div> 
           <Header/>
         </div>
-        <div className = "relogio">
+        <div className = "relogio clock-time clockzada">
             <div>
+             <LabelRelogio name={this.state.name} />  
             <form ref = "form" onSubmit = {this.onSubmit} className = "countdown-form">
-                <input type="text" ref="horas"/>
-                <input type="text" ref="minutos"/>
-                <input type="text" ref="segundos"/>
-                <Botao onClick={() => this.setTempo()} label={"Enviar"}/>
+                <input type="number" ref="horas"/>
+                <strong>:</strong> <input type="number" ref="minutos"/>
+                <strong>:</strong> <input type="number" ref="segundos"/><br></br> <br></br>
+                <Botao onClick={() => this.setTempo()} label={"Escolher"}/>
             </form>
             </div>
-           
+          
           <Contador horas={this.state.horas} minutos={this.state.minutos} segundos={this.state.segundos} centesimo={this.state.centesimo}/>
-          <LabelRelogio name={this.state.name} />
+          
           <Botao onClick={() => this.zerar()} label={"Zerar"} />
           <Botao onClick={() => this.pararTempo()} label={this.state.nameStop} />
           <Botao onClick={() => this.parcial()} label={"Pacial"} />

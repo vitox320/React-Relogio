@@ -9,7 +9,7 @@ export default class App extends Component{
   render() {
     return (
       
-      <div >      
+      <div>      
         <Header/>
         <div className = 'clockzada'> Relogio Local </div>
         <div className= 'clock-time clockzada'>
@@ -22,10 +22,7 @@ export default class App extends Component{
         <SearchBar />
         
         <ClockList />
-        </div>
-        
-
-        
+        </div>        
       </div>
     );
   }

@@ -4,7 +4,7 @@ import Contador from './Contador'
 import Botao from './Botao'
 import LabelRelogio from './LabelRelogio'
 import './App.css';
-
+import './clock.css'
 class Cronometro extends React.Component {
   constructor(props){
     super(props);
@@ -98,7 +98,7 @@ class Cronometro extends React.Component {
       segundos: 0,  
       minutos: 0,  
       centesimo:0,
-      parcial: "",
+      parcial: ""
     })
   }
 
@@ -112,9 +112,10 @@ class Cronometro extends React.Component {
         <div> 
           <Header/>
         </div>
-        <div className = "relogio">
+        <div className = "relogio clock-time  ">
+          <LabelRelogio name={this.state.name} /><br></br>
           <Contador horas={this.state.horas} minutos={this.state.minutos} segundos={this.state.segundos} centesimo={this.state.centesimo} />
-          <LabelRelogio name={this.state.name} />
+         <br></br>
           <Botao onClick={() => this.zerar()} label={"Zerar"} />
           <Botao onClick={() => this.pararTempo()} label={this.state.nameStop} />
           <Botao onClick={() => this.parcial()} label={"Pacial"} />

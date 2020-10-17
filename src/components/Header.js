@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom'
+import { Button } from 'reactstrap';
 const Header = (props) => {
   const [collapsed, setCollapsed] = useState(true);   
   
@@ -14,13 +15,13 @@ const Header = (props) => {
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
-            <NavLink ><Link to = "/">Relogio</Link></NavLink>
+            <NavLink ><Link to = "/"> <Button  outline color = 'danger'> Relogio </Button> </Link></NavLink>
             </NavItem>
             <NavItem>
-            <NavLink ><Link to = "/Cronometro">Cronometro</Link></NavLink>
+            <NavLink  ><Link to = "/Cronometro"><Button  outline color = 'danger'> Cronômetro </Button> </Link></NavLink>
             </NavItem>
             <NavItem>
-            <NavLink ><Link to = "/Temporizador">Timer</Link></NavLink>
+            <NavLink ><Link to = "/Temporizador"><Button  outline color = 'danger'> Temporizador </Button></Link></NavLink>
             </NavItem>
           </Nav>
         </Collapse>
