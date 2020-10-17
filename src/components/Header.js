@@ -20,7 +20,7 @@ const Header = (props) => {
             <NavLink ><Link to = "/Cronometro">Cronometro</Link></NavLink>
             </NavItem>
             <NavItem>
-            <NavLink ><Link to = "/Timer">Timer</Link></NavLink>
+            <NavLink ><Link to = "/Temporizador">Timer</Link></NavLink>
             </NavItem>
           </Nav>
         </Collapse>
