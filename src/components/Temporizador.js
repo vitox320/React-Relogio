@@ -113,7 +113,9 @@ class Temporizador extends React.Component {
       
 
       <div>
-        
+         <div> 
+          <Header/>
+        </div>
         <div className = "relogio">
             <div>
             <form ref = "form" onSubmit = {this.onSubmit} className = "countdown-form">
@@ -123,7 +125,7 @@ class Temporizador extends React.Component {
                 <Botao onClick={() => this.setTempo()} label={"Enviar"}/>
             </form>
             </div>
-
+           
           <Contador horas={this.state.horas} minutos={this.state.minutos} segundos={this.state.segundos} centesimo={this.state.centesimo}/>
           <LabelRelogio name={this.state.name} />
           <Botao onClick={() => this.zerar()} label={"Zerar"} />

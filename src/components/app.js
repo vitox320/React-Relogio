@@ -4,6 +4,7 @@ import SearchBar from './search_bar';
 import ClockList from './clock_list';
 import Header from './Header';
 import './clock.css'
+import MainClock from './MainClock';
 export default class App extends Component{
   render() {
     return (
@@ -12,9 +13,10 @@ export default class App extends Component{
         <Header/>
         <div className = 'clockzada'> Relogio Local </div>
         <div className= 'clock-time clockzada'>
-          {moment.tz('America/Bahia').format('HH:mm:ss')} 
-         
-         </div>
+
+       
+        <MainClock/>
+        </div>
         <div className= ' clockzada'>
         <h4 > Lista de Time zones </h4>
         <SearchBar />
