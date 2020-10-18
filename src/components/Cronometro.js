@@ -14,20 +14,11 @@ class Cronometro extends React.Component {
       minutos: 0,
       centesimo: 0,
       stop: false,
-      nameStop: "Stop",
+      nameStop: "Start",
       name: "Cronômetro", 
       parcial: ""
     };
   }
-   zerarCronometro() {
-     
-      this.state.centesimo = 0
-      this.state.segundos = 0
-      this.state.minutos = 0
-      this.state.horas = 0
-      
-      this.state.parcial = ""
-   }
   
   parcial(){
     let p = this.state.horas+":" + this.state.minutos+ ":"+ this.state.segundos +':'+ this.state.centesimo + "\n\n"
@@ -39,13 +30,13 @@ class Cronometro extends React.Component {
         stop: !this.state.stop 
       })
     if (this.state.stop)
-      this.state.nameStop = "Stop"
-    else
       this.state.nameStop = "Start"
+    else
+      this.state.nameStop = "Stop"
   }
 
   incrementar () {
-    if (this.state.stop === false){
+    if (this.state.stop === true){
       this.setState(
          function (state, props) {
         
