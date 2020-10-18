@@ -43,7 +43,7 @@ class Temporizador extends React.Component {
       this.setState(
          function (state, props) {
 
-          if(state.horas === 0 && state.minutos === 0 && state.segundos === 0){
+          if(state.horas <= 0 && state.minutos <= 0 && state.segundos <= 0){
             this.zerar()
           }else{
             
@@ -68,11 +68,22 @@ class Temporizador extends React.Component {
   }
 
   setTempo(){
-    this.setState({
-      horas: this.refs.horas.value,
-      minutos: this.refs.minutos.value,
-      segundos: this.refs.segundos.value,
+    if(this.refs.horas.value < 0 || this.refs.minutos.value < 0 || this.refs.segundos.value < 0){
+        alert("Você informou hora, minuto ou segundo menor que zero, por favor passe novos valores!"),
+        this.state.horas = 0
+        this.state.minutos = 0
+        this.state.segundos = 0
+    }else if(this.refs.horas.value == 0 && this.refs.minutos.value == 0 && this.refs.segundos.value == 0){
+        alert("Você informou horas, minuto e segundo iguais a zero, por favor informe novos valores")
+    }else{
+      this.setState({
+      horas: this.refs.horas.value || 0,
+      minutos: this.refs.minutos.value || 0,
+      segundos: this.refs.segundos.value || 0,
     })
+    }
+
+    
   }
   
   decrementarSegundo (state) {
@@ -120,9 +131,9 @@ class Temporizador extends React.Component {
             <div>
              <LabelRelogio name={this.state.name} />  
             <form ref = "form" onSubmit = {this.onSubmit} className = "countdown-form">
-                <input type="number" ref="horas"/>
-                <strong>:</strong> <input type="number" ref="minutos"/>
-                <strong>:</strong> <input type="number" ref="segundos"/><br></br> <br></br>
+                <input type="number" ref="horas"min="0" step="0"/>
+                <strong>:</strong> <input type="number" ref="minutos" min="0" step="0"/>
+                <strong>:</strong> <input type="number" ref="segundos"min="0" step="0"/><br></br> <br></br>
                 <Botao onClick={() => this.setTempo()} label={"Escolher"}/>
             </form>
             </div>
